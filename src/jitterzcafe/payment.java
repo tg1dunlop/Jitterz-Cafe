@@ -1,7 +1,7 @@
 package jitterzcafe;
 
 
-public class payment extends Product {
+public class payment extends Productv {
 	private  double quanity;
 	private  double saleTax;
 	private  String paymentType;
