@@ -1,7 +1,7 @@
 package jitterzcafe;
 
 
-public class payment extends Productv {
+public class payment {
 	private  double quanity;
 	private  double saleTax;
 	private  String paymentType;
@@ -17,7 +17,7 @@ public class payment extends Productv {
 	 */
 	public payment(String name, String category, String description, double price, double quanity, double saleTax,
 			String paymentType) {
-		super(name, category, description, price);
+		//super(name, category, description, price);
 		setQuanity(quanity);
 		setSaleTax(saleTax);
 		setPaymentType(paymentType);
