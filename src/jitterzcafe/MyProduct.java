@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 public class MyProduct {
 	
 	public static void readFile(File menuFile) {
@@ -42,7 +44,9 @@ public class MyProduct {
 		PrintWriter wrt=null;
 		try {
 			wrt= new PrintWriter(menuFile);
-			wrt.println("Coffee\nLattes\nBeignets\nBuzzers");
+			wrt.println("Menu Items");
+			wrt.println("============");
+			wrt.println("Coffee - $1\nLattes - $1\nCappucino - $2\nBeignets - $3 \nBuzzers - $2/shot");
 						
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -71,6 +75,8 @@ public class MyProduct {
 			wrt.close();
 			
 		} catch (FileNotFoundException e) {
+			
+			System.out.println("Please enter a number to order!");
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			
