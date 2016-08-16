@@ -1,53 +1,63 @@
 package jitterzcafe;
 
+
 public class payment extends Product {
-	
-	private double quantity;
-	private double salesTax;
-	private String paymentType;
-	
-	//public payment(String name, String category, String description, double price) {
+
+	private  double quanity;
+	private  double saleTax;
+	private  String paymentType;
+	  
+	/**
+	 * @param name
+	 * @param category
+	 * @param description
+	 * @param price
+	 * @param quanity
+	 * @param saleTax
+	 * @param paymentType
+	 */
+	public payment(String name, String category, String description, double price, double quanity, double saleTax,
+			String paymentType) {
 		//super(name, category, description, price);
-//}
-	
-	private payment(String name, String category, String description, double price, double quantity, double salesTax,
-			String paymentType, String checkNum) {
-		super(name, category, description, price);
-		setQuantity(quantity);
-		setSalesTax(salesTax);
+		setQuanity(quanity);
+		setSaleTax(saleTax);
 		setPaymentType(paymentType);
 	}
 
-	public double getQuantity() {
-		return quantity;
+	public double getQuanity() {
+		return quanity;
 	}
 
-	public void setQuantity(double quantity) {
-		this.quantity = quantity;
+	public void setQuanity(double quanity) {
+		this.quanity = quanity;
 	}
 
-	public double getSalesTax() {
-		return salesTax;
+	public double getSaleTax() {
+		return saleTax;
 	}
 
-	public void setSalesTax(double salesTax) {
-		this.salesTax = salesTax; }
-	
+	public void setSaleTax(double saleTax) {
+		this.saleTax = saleTax;
+	}
+
 	public String getPaymentType() {
 		return paymentType;
 	}
 
 	public void setPaymentType(String paymentType) {
 		this.paymentType = paymentType;
-	} 
+	}
+	public double getSubtotal(){
+		double subtotal = 0;
+		return subtotal;
+	}
+	public double getGrandTotal(){
+		double grandTotal =0;
+		return grandTotal;
+		
+	}
+
+}
 
 
-public double getSubTotal(){
-	double subtotal = 0;
-	return subtotal;
-}
-public double getGrandTotal(){
-	double grandtotal = 0;
-	return grandtotal;
-}
-}
+
