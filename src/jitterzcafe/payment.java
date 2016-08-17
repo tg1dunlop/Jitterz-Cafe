@@ -1,29 +1,25 @@
 package jitterzcafe;
 
-import java.math.BigDecimal;
 
-public class payment extends Product {
+
+public class payment{
 
 	private  double quanity;
 	private  double saleTax;
 	private  String paymentType;
 	
 	
+	
+
 	/**
-	 * @param name
-	 * @param category
-	 * @param description
-	 * @param price
 	 * @param quanity
 	 * @param saleTax
 	 * @param paymentType
 	 */
-	
-	public payment(String name, String category, String description, double price, double quanity, double saleTax,
-			String paymentType) {
-		super(name, category, description, price);
+	public payment(double quanity, double saleTax, String paymentType) {
+		super();
 		setQuanity(quanity);
-		setSaleTax(.06);
+		setSaleTax(saleTax);
 		setPaymentType(paymentType);
 	}
 
@@ -50,18 +46,16 @@ public class payment extends Product {
 	public void setPaymentType(String paymentType) {
 		this.paymentType = paymentType;
 	}
-	public double getSubtotal(Product[] orders){
+	
+	public double getSubtotal(int qty,double price){
 		double subtotal = 0;
-		for (int i = 0; i < orders.length; i++) {
-			subtotal += orders[i].getPrice();
-			System.out.println(orders[i].getPrice());
-		}
+		subtotal = qty * price;
 		return subtotal;
 	}
-	public double getGrandTotal(Product[] orders){
+	public double getGrandTotal(int qty,double price){
 		double grandTotal =0;
-		double tax = getSaleTax();
-		double subtot = getSubtotal(orders);
+		double tax = .06;
+		double subtot = getSubtotal(qty,price);
 		grandTotal = tax + subtot;
 		return grandTotal;
 		
