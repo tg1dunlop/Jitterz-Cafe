@@ -56,7 +56,7 @@ public class payment{
 		double grandTotal =0;
 		double tax = .06;
 		double subtot = getSubtotal(qty,price);
-		grandTotal = tax + subtot;
+		grandTotal = (tax + subtot) + subtot;
 		return grandTotal;
 		
 	}
