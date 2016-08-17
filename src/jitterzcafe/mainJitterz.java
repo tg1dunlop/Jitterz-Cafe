@@ -18,6 +18,7 @@ public class mainJitterz {
 		// int userSelection = 1;
 		String answer = "y";
 		double stotal = 0;
+		
 
 		System.out.println("Welcome to Jitterz Cafe!");
 		System.out.println("May I have your name? ");
@@ -99,6 +100,10 @@ public class mainJitterz {
 			System.out.println("Would you like to add to this order? Y or N");
 			answer = scan1.nextLine();
 			if (answer.equalsIgnoreCase("n")) {
+				//display receipt
+				//ct.getOrderReceipts();
+				//for (int j = 0; j < receipt.size(); j++) 
+				
 				System.out.println(ct.getGrandTotal(qty, stotal));
 
 			}
@@ -114,7 +119,8 @@ public class mainJitterz {
 		for (int i = 0; i < prodlist.size(); i++) {
 			if ((prodlist.get(i).getMenuItem().equals(choice1))) {
 				stotal += ct.getSubtotal(qty, prodlist.get(i).getPrice());
-
+				
+				//ct.setOrderReceipt(prodlist.get(i).getDescription() , prodlist.get(i).getPrice());
 				System.out.println("Your subtotal = " + stotal);
 
 			} // end of if

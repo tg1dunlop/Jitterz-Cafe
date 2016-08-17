@@ -1,6 +1,6 @@
 package jitterzcafe;
 
-
+import java.util.ArrayList;
 
 public class payment{
 
@@ -8,7 +8,7 @@ public class payment{
 	private  double saleTax;
 	private  String paymentType;
 	
-	
+
 	
 
 	/**
@@ -59,8 +59,27 @@ public class payment{
 		return grandTotal;
 		
 	}
+	/*public String[] setOrderReceipt(int cnt,String desc, double price){
+		String[] receipt = new String [12];
+		for (int i = 0; i < receipt.length; i++) {
+			receipt[i]= desc + price; 
+		}
+		return receipt;
+		*/
+	
+	//public void getOrderReceipts(){
+		//for (int j = 0; j < receipt.size(); j++) {
+		//System.out.println(receipt.get(j));
+	//}
+	
+	//return receipt;
+	
+	
+	}
+	
+	
 
-}
+
 
 
 
