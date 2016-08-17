@@ -46,7 +46,7 @@ public class MyProduct {
 			wrt= new PrintWriter(menuFile);
 			wrt.println("Menu Items");
 			wrt.println("============");
-			wrt.println("1: COFFEE:\n *Iced Coffee - $2 *Regular - $1\n\n *Decaf - $1\n\n2: LATTES\n *Regular - $4\n *Flavored - $3\n *Decaf Mocha - $3\n\n3: PASTRIES\n *Beignets - $3\n *Scones - $3\n *Muffins - $3\n\n4: BUZZERS - $2/shot\n *Baileys\n *Kahlua\n *Whiskey");
+			wrt.println("1: COFFEE:\n *Iced Coffee - $3.50 *Decaf - $2.50\n\n *Regular - $2.00\n\n2: LATTES\n *Regular - $3.50\n *Flavored - $2.50\n *Decaf Mocha - $2.00\n\n3: PASTRIES\n *Beignets - $3.50\n *Scones - $2.50\n *Muffins - $1\n\n4: BUZZERS - $2/shot\n *Baileys\n *Kahlua\n *Whiskey");
 						
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
