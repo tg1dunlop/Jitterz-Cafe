@@ -64,7 +64,7 @@ public class mainJitterz {
 				stotal = displayCurTotal(scan1, ct, qty, stotal, prodlist, Choice1);
 				break;
 			case 2:
-				System.out.println("Please enter r for Regular.  f for Flavored. dm for Decaf Mocha");
+				System.out.println("Please enter (r) for Regular.  (f) for Flavored. (dm) for Decaf Mocha");
 				Choice1 = scan1.nextLine();
 				System.out.println("How many would you like? ");
 				qty = scan1.nextInt();
@@ -72,7 +72,7 @@ public class mainJitterz {
 				stotal = displayCurTotal(scan1, ct, qty, stotal, prodlist, Choice1);
 				break;
 			case 3:
-				System.out.println("Please enter bg for Beignet. s for Scone. m for Muffin");
+				System.out.println("Please enter (bg) for Beignet. (s) for Scone. (m) for Muffin");
 				Choice1 = scan1.nextLine();
 				System.out.println("How many would you like? ");
 				qty = scan1.nextInt();
@@ -80,7 +80,7 @@ public class mainJitterz {
 				stotal = displayCurTotal(scan1, ct, qty, stotal, prodlist, Choice1);
 				break;
 			case 4:
-				System.out.println("Please enter y for Baileys. k for Kahlua. w for Whiskey");
+				System.out.println("Please enter (y) for Baileys. (k) for Kahlua. (w) for Whiskey");
 				Choice1 = scan1.nextLine();
 				System.out.println("How many would you like? ");
 				qty = scan1.nextInt();
@@ -94,59 +94,63 @@ public class mainJitterz {
 
 			System.out.println("Would you like to add to this order? Y or N");
 			answer = scan1.nextLine();
-			System.out.println("What is choice: " + answer);
+			if (answer.equalsIgnoreCase("n")){
+				 System.out.println(ct.getGrandTotal(qty,stotal));
+				 
+			}
+		
 		} // end loop
-			// of
+		   
+			System.out.println("Thanks for Coming. Good bye.");
 	}// end main
 
 	private static double displayCurTotal(Scanner scan1, payment ct, int qty, double stotal,
 			ArrayList<Product> prodlist, String choice1) {
 		for (int i = 0; i < prodlist.size(); i++) {
 			if ((prodlist.get(i).getMenuItem().equals(choice1))) {
-
-				switch (choice1) {
-				case "a":
-					System.out.println("You have ordered " + qty + "Iced Coffee.");
-					break;
-				case "b":
-					System.out.println("You have ordered " + qty + " Decaf Coffee.");
-					break;
-				case "c":
-					System.out.println("You have ordered " + qty + " Regular Coffee.");
-					break;
-				case "r":
-					System.out.println("You have ordered " + qty + " Regular Latte");
-					break;
-				case "f":
-					System.out.println("You have ordered " + qty + " Flavored Latte");
-					break;
-				case "dm":
-					System.out.println("You have ordered " + qty + " Decaf Mocha Latte");
-					break;
-				case "bg":
-					System.out.println("You have ordered " + qty + " Beignet");
-					break;
-				case "s":
-					System.out.println("You have ordered " + qty + " Scone");
-					break;
-				case "m":
-					System.out.println("You have ordered " + qty + " Muffin");
-					break;
-				case "y":
-					System.out.println("You have ordered " + qty + " Baileys");
-					break;
-				case "k":
-					System.out.println("You have ordered " + qty + " Kahula");
-					break;
-				case "w":
-					System.out.println("You have ordered " + qty + " Whiskey");
-					break;
-				}
+				stotal += ct.getSubtotal(qty,prodlist.get(i).getPrice());
 				System.out.println("Your subtotal is: " + stotal);
-			} // end switch
+			} // end of if
 
 		} // end for loop
-
+		switch (choice1) {
+		case "a":
+			System.out.println("You have ordered " + qty + " Iced Coffee.");
+			break;
+		case "b":
+			System.out.println("You have ordered " + qty + " Decaf Coffee.");
+			break;
+		case "c":
+			System.out.println("You have ordered " + qty + " Regular Coffee.");
+			break;
+		case "r":
+			System.out.println("You have ordered " + qty + " Regular Latte");
+			break;
+		case "f":
+			System.out.println("You have ordered " + qty + " Flavored Latte");
+			break;
+		case "dm":
+			System.out.println("You have ordered " + qty + " Decaf Mocha Latte");
+			break;
+		case "bg":
+			System.out.println("You have ordered " + qty + " Beignet");
+			break;
+		case "s":
+			System.out.println("You have ordered " + qty + " Scone");
+			break;
+		case "m":
+			System.out.println("You have ordered " + qty + " Muffin");
+			break;
+		case "y":
+			System.out.println("You have ordered " + qty + " Baileys");
+			break;
+		case "k":
+			System.out.println("You have ordered " + qty + " Kahula");
+			break;
+		case "w":
+			System.out.println("You have ordered " + qty + " Whiskey");
+			break;
+		}//end of switch
 		return stotal;
 	}
 
