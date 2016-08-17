@@ -37,125 +37,117 @@ public class mainJitterz {
 		prodlist.add(new Product(userName, "After Hours", "Baileys", "y", 4.50));
 		prodlist.add(new Product(userName, "After Hours", "Kahula", "k", 5.50));
 		prodlist.add(new Product(userName, "After Hours", "Whiskey", "w", 9.00));
-		
-		while (choice.equalsIgnoreCase("y")) {
-			
-			displayMenu();
-			
-			System.out.println(userName + " What would you like to order today? Please enter item number from the menu:");
+
+		while (answer.equalsIgnoreCase("y")) {
+			// set up file paths
+			Path filePath = Paths.get("menuItems.txt");
+			File menuFile = filePath.toFile();
+			// displaying the menu from MyProduct
+			MyProduct.writeToFile(menuFile);
+			MyProduct.readFile(menuFile);
+			// displayMenu();
+
+			System.out
+					.println(userName + " what would you like to order today? Please enter item number from the menu:");
 			userInput = scan1.nextInt();
 			scan1.nextLine();
 			int qty = 0;
 			payment ct = new payment(qty, .06, "cash");
-			
-			switch (userInput) 
-			{
+
+			switch (userInput) {
 			case 1:
-				System.out.println("Please enter a for Iced coffee. b for Decaf. c for Regular");
+				System.out.println("Please enter (a) for Iced coffee, (b) for Decaf or (c) for Regular");
 				String Choice1 = scan1.nextLine();
 				System.out.println("How many would you like? ");
 				qty = scan1.nextInt();
 				scan1.nextLine();
 				stotal = displayCurTotal(scan1, ct, qty, stotal, prodlist, Choice1);
 				break;
-			case 2: 
+			case 2:
 				System.out.println("Please enter r for Regular.  f for Flavored. dm for Decaf Mocha");
-				 Choice1 = scan1.nextLine();
-				 System.out.println("How many would you like? ");
-					qty = scan1.nextInt();
-					scan1.nextLine();
-				 stotal = displayCurTotal(scan1, ct, qty, stotal, prodlist, Choice1);
-				 break;
-			case 3: 
+				Choice1 = scan1.nextLine();
+				System.out.println("How many would you like? ");
+				qty = scan1.nextInt();
+				scan1.nextLine();
+				stotal = displayCurTotal(scan1, ct, qty, stotal, prodlist, Choice1);
+				break;
+			case 3:
 				System.out.println("Please enter bg for Beignet. s for Scone. m for Muffin");
 				Choice1 = scan1.nextLine();
 				System.out.println("How many would you like? ");
 				qty = scan1.nextInt();
 				scan1.nextLine();
-				 stotal = displayCurTotal(scan1, ct, qty, stotal, prodlist, Choice1);
+				stotal = displayCurTotal(scan1, ct, qty, stotal, prodlist, Choice1);
 				break;
-			case 4: 
+			case 4:
 				System.out.println("Please enter y for Baileys. k for Kahlua. w for Whiskey");
 				Choice1 = scan1.nextLine();
 				System.out.println("How many would you like? ");
 				qty = scan1.nextInt();
 				scan1.nextLine();
-				 stotal = displayCurTotal(scan1, ct, qty, stotal, prodlist, Choice1);
+				stotal = displayCurTotal(scan1, ct, qty, stotal, prodlist, Choice1);
 				break;
-			
+
 			default:
 				break;
 			} // end of switch
-			
+
 			System.out.println("Would you like to add to this order? Y or N");
 			answer = scan1.nextLine();
 			System.out.println("What is choice: " + answer);
-		}// end
-																																				// of
-																																				// while
+		} // end loop
+			// of
+	}// end main
 
-	public static double displayCurTotal(Scanner scan1, payment ct, qty, double stotal, ArrayList<Product> prodlist,
-				String Choice1)) {
-			
-			
-			for (int i = 0; i < prodlist.size(); i++)  {
-				if((prodlist.get(i).getMenuItem().equals(Choice1))) {
-					
-					switch(Choice1) {
-					case "a":
-						System.out.println("You have ordered " +qty+ "Iced Coffee.");
-						break;
-					case "b":
-						System.out.println("You have ordered "+qty+ " Decaf Coffee.");
-						break;
-					case "c":
-						System.out.println("You have ordered "+qty+ " Regular Coffee.");
-						break;
-					case "r":
-						System.out.println("You have ordered "+qty+ " Regular Latte");
-						break;
-					case "f":
-						System.out.println("You have ordered "+qty+ " Flavored Latte");
-						break;
-					case "dm":
-						System.out.println("You have ordered "+qty+ " Decaf Mocha Latte");
-						break;
-					case "bg":
-						System.out.println("You have ordered "+qty+ " Beignet");
-						break;
-					case "s":
-						System.out.println("You have ordered "+qty+ " Scone");
-						break;
-					case "m":
-						System.out.println("You have ordered "+qty+ " Muffin");
-						break;
-					case "y":
-						System.out.println("You have ordered "+qty+ " Baileys");
-						break;
-					case "k":
-						System.out.println("You have ordered "+qty+ " Kahula");
-						break;
-					case "w":
-						System.out.println("You have ordered "+qty+ " Whiskey");
-						break;
-					}
-					System.out.println("Your subtotal is: " +stotal);
-				}//end switch
-				
-			}//end for loop
-			return stotal;
-			
-			}
+	private static double displayCurTotal(Scanner scan1, payment ct, int qty, double stotal,
+			ArrayList<Product> prodlist, String choice1) {
+		for (int i = 0; i < prodlist.size(); i++) {
+			if ((prodlist.get(i).getMenuItem().equals(choice1))) {
 
-	public static void displayMenu() {
-		// set up file paths
-		Path filePath = Paths.get("menuItems.txt");
-		File menuFile = filePath.toFile();
-		// displaying the menu from MyProduct
-		MyProduct.writeToFile(menuFile);
-		MyProduct.readFile(menuFile);
-		}
+				switch (choice1) {
+				case "a":
+					System.out.println("You have ordered " + qty + "Iced Coffee.");
+					break;
+				case "b":
+					System.out.println("You have ordered " + qty + " Decaf Coffee.");
+					break;
+				case "c":
+					System.out.println("You have ordered " + qty + " Regular Coffee.");
+					break;
+				case "r":
+					System.out.println("You have ordered " + qty + " Regular Latte");
+					break;
+				case "f":
+					System.out.println("You have ordered " + qty + " Flavored Latte");
+					break;
+				case "dm":
+					System.out.println("You have ordered " + qty + " Decaf Mocha Latte");
+					break;
+				case "bg":
+					System.out.println("You have ordered " + qty + " Beignet");
+					break;
+				case "s":
+					System.out.println("You have ordered " + qty + " Scone");
+					break;
+				case "m":
+					System.out.println("You have ordered " + qty + " Muffin");
+					break;
+				case "y":
+					System.out.println("You have ordered " + qty + " Baileys");
+					break;
+				case "k":
+					System.out.println("You have ordered " + qty + " Kahula");
+					break;
+				case "w":
+					System.out.println("You have ordered " + qty + " Whiskey");
+					break;
+				}
+				System.out.println("Your subtotal is: " + stotal);
+			} // end switch
 
-		}
+		} // end for loop
+
+		return stotal;
+	}
 
 }
