@@ -1,16 +1,11 @@
 package jitterzcafe;
 
-import java.util.ArrayList;
-
 public class payment{
 
 	private  double quanity;
 	private  double saleTax;
 	private  String paymentType;
 	
-
-	
-
 	/**
 	 * @param quanity
 	 * @param saleTax

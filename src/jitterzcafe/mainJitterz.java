@@ -24,9 +24,9 @@ public class mainJitterz {
 		System.out.println("May I have your name? ");
 		userName = scan1.nextLine(); // store name
 
-		ArrayList<Product> prodlist = new ArrayList<Product>();
+		ArrayList<Product> prodlist = new ArrayList<Product>(); //Using a constructor to construct the ArrayList
 		// Category, Description, Menu item, price
-		prodlist.add(new Product(userName, "Coffee", "Iced Coffee", "a", 3.50));
+		prodlist.add(new Product(userName, "Coffee", "Iced Coffee", "a", 3.50)); 
 		prodlist.add(new Product(userName, "Coffee", "Decaf Coffee", "b", 2.50));
 		prodlist.add(new Product(userName, "Coffee", "Regular Coffee", "c", 2.00));
 		prodlist.add(new Product(userName, "Lattes", "Regular", "r", 3.50));
@@ -54,8 +54,8 @@ public class mainJitterz {
 
 			userInput = scan1.nextInt();
 			scan1.nextLine();
-			int qty = 0;
-			payment ct = new payment(qty, .06, "cash");
+			int qty = 0; 
+			payment ct = new payment(qty, .06, "cash"); //create payment object
 
 			switch (userInput) {
 			case 1:
@@ -64,7 +64,7 @@ public class mainJitterz {
 				System.out.println("How many would you like? ");
 				qty = scan1.nextInt();
 				scan1.nextLine();
-				stotal = displayCurTotal(scan1, ct, qty, stotal, prodlist, Choice1);
+				stotal = displayCurTotal(scan1, ct, qty, stotal, prodlist, Choice1); //calculates the subtotal
 				break;
 			case 2:
 
@@ -99,12 +99,12 @@ public class mainJitterz {
 
 			System.out.println("Would you like to add to this order? Y or N");
 			answer = scan1.nextLine();
-			if (answer.equalsIgnoreCase("n")) {
+			if (answer.equalsIgnoreCase("n")) { //user decides to leave, print grand total
 				//display receipt
 				//ct.getOrderReceipts();
 				//for (int j = 0; j < receipt.size(); j++) 
 				
-				System.out.println(ct.getGrandTotal(qty, stotal));
+				System.out.println("Your grand total is: " + "$" + ct.getGrandTotal(qty, stotal));
 
 			}
 
@@ -121,7 +121,7 @@ public class mainJitterz {
 				stotal += ct.getSubtotal(qty, prodlist.get(i).getPrice());
 				
 				//ct.setOrderReceipt(prodlist.get(i).getDescription() , prodlist.get(i).getPrice());
-				System.out.println("Your subtotal = " + stotal);
+				System.out.println("Your subtotal = " +"$" + stotal);
 
 			} // end of if
 
