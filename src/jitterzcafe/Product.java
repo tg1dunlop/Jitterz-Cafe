@@ -7,7 +7,7 @@ public class Product {
 	private double price;
 	private String menuItem;
 
-	public Product(String name, String category, String description, double price, String item) {
+	public Product(String name, String category, String description,String item, double price)  {
 		super();
 		setName(name);
 		setCategory(category);
