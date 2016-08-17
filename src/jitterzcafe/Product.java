@@ -5,15 +5,27 @@ public class Product {
 	private String category;
 	private String description;
 	private double price;
+	private String menuItem;
 
-	public Product(String name, String category, String description, double price) {
+	public Product(String name, String category, String description, double price, String item) {
 		super();
 		setName(name);
 		setCategory(category);
 		setDescription(description);
 		setPrice(price);
+		setMenuItem(item);
 	}
 	
+
+	public String getMenuItem() {
+		return menuItem;
+	}
+
+
+	public void setMenuItem(String menuItem) {
+		this.menuItem = menuItem;
+	}
+
 
 	public String getCategory() {
 		return category;
