@@ -52,11 +52,10 @@ public class payment{
 		subtotal = qty * price;
 		return subtotal;
 	}
-	public double getGrandTotal(int qty,double price){
+	public double getGrandTotal(int qty,double stotal){
 		double grandTotal =0;
 		double tax = .06;
-		double subtot = getSubtotal(qty,price);
-		grandTotal = (tax + subtot) + subtot;
+		grandTotal = (tax * stotal)+stotal;
 		return grandTotal;
 		
 	}
