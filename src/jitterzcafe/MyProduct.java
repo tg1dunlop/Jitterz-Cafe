@@ -81,7 +81,7 @@ public class MyProduct {
 		}
 		catch(IOException e)
 		{
-			System.out.println("Please enter a number to order!");
+			//System.out.println("Please enter a number to order!");
 			
 		}
 		

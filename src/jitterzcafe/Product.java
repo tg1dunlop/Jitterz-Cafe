@@ -7,9 +7,9 @@ public class Product {
 	private double price;
 	private String menuItem;
 
-	public Product(String name, String category, String description,String item, double price)  {
-		super();
-		setName(name);
+	public Product(String name, String category, String description,String item, double price)  { //used in our main to set up ArrayList ProdList
+		super();		//use product constructor to set information on each product in the product class, 
+		setName(name); //use getters and setters to pull back the information on the product 
 		setCategory(category);
 		setDescription(description);
 		setPrice(price);
