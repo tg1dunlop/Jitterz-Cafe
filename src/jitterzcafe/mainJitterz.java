@@ -45,10 +45,10 @@ public class mainJitterz {
 		
 		while (answer.equalsIgnoreCase("y")) {
 			// set up file paths
-			Path filePath = Paths.get("menuItems.txt");
+			Path filePath = Paths.get("menuItems.txt"); //setting up our objects to read and write to the txt file
 			File menuFile = filePath.toFile();
 			// displaying the menu from MyProduct
-			MyProduct.writeToFile(menuFile);
+			MyProduct.writeToFile(menuFile); //methods to write and read to file 
 			MyProduct.readFile(menuFile);
 			// displayMenu();
 
